@@ -212,6 +212,7 @@ function bc_oauth_init(){
 
 }
 add_action('wp_ajax_bc_oauth', 'bc_oauth_init');
+add_action('init', 'bc_oauth_init');
 
 
 ?>

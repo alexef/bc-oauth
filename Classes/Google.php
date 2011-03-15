@@ -60,7 +60,8 @@ class BC_OAuth_Google {
 			if (empty($_GET["oauth_token"])){
 				$getAuthTokenParams = array(
 					'scope' => 'http://www.google.com/m8/feeds/contacts/default/full',
-					'xoauth_displayname' => 'bettercodes.org',
+					//'scope' => 'https://mail.google.com/mail/feed/atom/',
+					'xoauth_displayname' => $_SERVER['HTTP_HOST'],
 					'oauth_callback' => $this->call_back
 					);
 
