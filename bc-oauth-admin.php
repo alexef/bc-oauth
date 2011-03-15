@@ -5,6 +5,9 @@ function bc_oauth_admin_settings() {
 
 	if ( isset( $_POST['bc-oauth-admin-submit'] ) && check_admin_referer('bc-oauth-admin') ) {
 
+		// Error message if user is new
+		update_site_option( 'bc_no_new_user', isset( $_POST['bc_no_new_user'] ));
+
 		// Error message if users email is empty
 		update_site_option( 'bc_oauth_empty_email_error_enabled', isset( $_POST['oid_oauth_enabled'] ) );
 		
@@ -82,6 +85,14 @@ function bc_oauth_admin_settings() {
 		<form action="" method="post" id="">
 
 			<?php do_action( 'bc_oauth_admin_screen' ) ?>
+
+			<h2>Do not create new users</h2>
+			<div class="widefat">
+				<p>Checking this will require an wordpress administrator to manually create user accounts for each user account, instead of dinamically creating an acount on login.
+				</p>
+				<input type="checkbox" name="bc_no_new_user" <?php if( get_site_option('bc_no_new_user') ) echo "checked"; ?> /> <label>Do not create new users.</label> 
+
+			</div>
 
 			<h2>Show notice if user e-mail is empty</h2>
 			<div class="widefat">

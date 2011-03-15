@@ -27,6 +27,10 @@ Class BC_OAuth_User {
 	 */
 	function bc_oauth_create_user($username, $email = '', $password = false, $firsname = false, $lastname = false, $avatar = false, $nickname = false, $nicename = false, $display_name = false, $custom_attr = false){
 
+		// check if user creation is disabled
+		if (get_site_option('bc_no_new_user'))
+			return false;
+
 		// check if email is alredy in the system
 		if( $email != '' && get_user_by('email', $email) )
 			return false;
