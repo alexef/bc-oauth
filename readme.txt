@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: 
-Donate link: bettercodes
-Tags: oauth, social, BuddyPress
-Requires at least: 3.0.3
-Tested up to: 3.0.3
+Donate link: http://bettercodes.org/donate
+Tags: oauth, social, BuddyPress, bettercodes
+Requires at least: 3.1
+Tested up to: 3.1
 Stable tag: 0.0
 
 This Plugin gives Wordpress, Buddypress and bettercodes - with oAuth a Single-Sign-On - login and singup functionality.
@@ -46,6 +46,12 @@ Please notice that you need to enable the permission "Read/Write Public and Priv
 3. Plugin with the bettercodes.org Plugin activated
 
 == Changelog ==
+
+= 0.2 =
+* Bugfixing release, Thanks to alexef and Veraxus for debugging and reporting. http://wordpress.org/support/topic/plugin-bc-oauth-bc-auth-blank-page?replies=8 
+* Making the Plugin compatible to Wordpress 3.1
+* Changing filename to naming convention
+* Changed init action from wp_ajax to init
 
 = 0.1 =
 * First Unstable-Version of the Plugin (for testing only)
